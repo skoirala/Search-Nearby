@@ -84,18 +84,6 @@ extension LoginViewController: LoginViewType {
     func handleLoginSuccess(with credentials: OauthCredential) {
         toggleLoginProgress()
         presenter.handleLoginSuccess()
-//        let navigationController = UINavigationController()
-////        let router = Router(navigationController: navigationController)
-////
-//        let presenter = SearchVenuePresenter(router: router,
-//                                             credentials: credentials)
-//
-//        let searchVenueViewController = SearchVenueViewController(presenter: presenter)
-//        navigationController.viewControllers = [searchVenueViewController]
-//
-//        present(navigationController,
-//                animated: true,
-//                completion: nil)
     }
 
     func showProgress() {
