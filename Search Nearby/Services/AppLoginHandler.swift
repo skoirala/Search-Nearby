@@ -74,8 +74,16 @@ internal class OauthLoginService {
                 return nil
         }
 
-        return ClientCredentials(clientId: appKeys[clientIdKey]!,
-                                 clientSecret: appKeys[clientSecretKey]!)
+        let clientId = appKeys[clientIdKey]!
+        let clientSecret = appKeys[clientSecretKey]!
+
+        if clientId.count == 0 || clientSecret.count == 0 {
+            assertionFailure("AppKeys.plist should have values for client_id and client_secret")
+            return nil
+        }
+
+        return ClientCredentials(clientId: clientId,
+                                 clientSecret: clientSecret)
     }
 }
 
