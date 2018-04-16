@@ -14,12 +14,12 @@ class OauthAuthenticationManager {
     }
 
     let storage: Storage
-    let loginService: OauthLoginService
+    let loginService: OauthLoginServiceType
 
     var observe: ((OauthCredential?, Error?) -> Void)?
 
     init(storage: Storage,
-         loginService: OauthLoginService) {
+         loginService: OauthLoginServiceType) {
 
         self.storage = storage
         self.loginService = loginService
@@ -67,29 +67,12 @@ class OauthAuthenticationManager {
         return credential != nil
     }
 
+    func startAuthorization() {
+        loginService.startAuthorization()
+    }
+
     func handleAuthentication(url: URL) -> Bool {
-        return self.loginService.handleOpen(url: url)
-    }
-
-    public func startAuthorization() {
-        let authenticationUrl = createOauthAuthenticationURL(clientId: "NDBOVZ4HXIRKKRNTRJW3V4YHUALOA1UB02ZR2Q32O5NOCYRN")
-        UIApplication.shared.open(authenticationUrl,
-                                  options: [:],
-                                  completionHandler: nil)
-    }
-
-    func createOauthAuthenticationURL(clientId: String) -> URL {
-        let oauthURLString = App.oauthServerURL
-                                        + "authenticate"
-                                        + "?"
-                                        + "client_id="
-                                        + clientId
-                                        + "&response_type="
-                                        + "code"
-                                        + "&redirect_uri="
-                                        + App.ouathRedirectURL
-        return URL(string: oauthURLString)!
-
+        return loginService.handleOpen(url: url)
     }
 }
 

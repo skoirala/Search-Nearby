@@ -33,7 +33,8 @@ internal class LoginViewPresenter {
             return
         }
 
-        view.handleLoginSuccess(with: token!)
+        view.handleLoginSuccess()
+        router.showSearchViewController()
     }
 }
 
@@ -46,9 +47,5 @@ extension LoginViewPresenter: LoginViewPresenterType {
 
     func attach(view: LoginViewType) {
         self.view = view
-    }
-
-    func handleLoginSuccess() {
-        router.showSearchViewController()
     }
 }

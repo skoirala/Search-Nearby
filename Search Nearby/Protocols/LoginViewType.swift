@@ -1,7 +1,7 @@
 import Foundation
 
 protocol LoginViewType: class {
-    func handleLoginSuccess(with token: OauthCredential)
+    func handleLoginSuccess()
     func showProgress()
     func showError(error: String)
 }

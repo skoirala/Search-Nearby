@@ -54,11 +54,25 @@ class Router {
         return authenticationManager.handleAuthentication(url: url)
     }
 
-    func showMapView(venue: Venue) {
-        let presenter = MapViewPresenter(router: self,
-                                         venue: venue)
+    func showVenuePhotos(venue: Venue) {
+        let photoPresenter = VenuePhotoPresenter(router: self,
+                                                 storage: storage,
+                                                 venue: venue)
+        let photoViewController = VenuePhotoViewController(presenter: photoPresenter)
+        rootViewController.pushViewController(photoViewController,
+                                              animated: true)
+   }
 
-        let mapViewController = MapViewController(presenter: presenter)
+    func showPhotoViewer(photo: VenuePhoto) {
+        let photoPresenter = PhotoViewerPresenter(photo: photo)
+        let viewController = PhotoViewerViewController(presenter: photoPresenter)
+        rootViewController.pushViewController(viewController,
+                                              animated: true)
+    }
+    func showMapView(venue: Venue) {
+        let mapViewPresenter = MapViewPresenter(router: self,
+                                                venue: venue)
+        let mapViewController = MapViewController(presenter: mapViewPresenter)
         rootViewController.pushViewController(mapViewController,
                                               animated: true)
     }

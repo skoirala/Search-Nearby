@@ -4,6 +4,7 @@ class LoginViewController<T: LoginViewPresenterType>: UIViewController {
 
     let loginButton = CustomButton(type: .custom)
     let progressView = ProgressView(frame: .zero)
+    let errorLabel = UILabel(frame: .zero)
 
     let presenter: T
 
@@ -28,10 +29,12 @@ class LoginViewController<T: LoginViewPresenterType>: UIViewController {
     fileprivate func setupViews() {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         progressView.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(loginButton)
         view.addSubview(progressView)
-
+        view.addSubview(errorLabel)
+        
         loginButton.backgroundColor = .loginButtonBackground
         loginButton.unhighlightedColor = .loginButtonBackground
         loginButton.highlightedColor = .loginButtonHighlighted
@@ -45,8 +48,15 @@ class LoginViewController<T: LoginViewPresenterType>: UIViewController {
         loginButton.setTitle("Authorize FourSquare",
                              for: .normal)
 
+        errorLabel.textAlignment = .center
+        errorLabel.numberOfLines = 0
+        errorLabel.lineBreakMode = .byWordWrapping
+        errorLabel.textColor = .red
+        errorLabel.font = .smallButtonTitle
+
         loginButton.isHidden = false
         progressView.isHidden = true
+        errorLabel.isHidden = true
     }
 
     fileprivate func createConstraints() {
@@ -64,6 +74,12 @@ class LoginViewController<T: LoginViewPresenterType>: UIViewController {
             progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             progressView.heightAnchor.constraint(equalTo: progressView.widthAnchor)
             ])
+
+        NSLayoutConstraint.activate([
+            errorLabel.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -20),
+            errorLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8),
+            errorLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8)
+            ])
     }
 
     @objc func touchUpInside() {
@@ -73,24 +89,31 @@ class LoginViewController<T: LoginViewPresenterType>: UIViewController {
 
 extension LoginViewController: LoginViewType {
 
-    func toggleLoginProgress() {
-        UIView.transition(from: loginButton,
-                          to: progressView,
-                          duration: 0.5,
-                          options: .showHideTransitionViews)
-
+    func toggleProgress(from: UIView, to: UIView) {
+        UIView.animate(withDuration: 0.25) {
+            from.isHidden = true
+            to.isHidden = false
+        }
     }
 
-    func handleLoginSuccess(with credentials: OauthCredential) {
-        toggleLoginProgress()
-        presenter.handleLoginSuccess()
+    func handleLoginSuccess() {
+        errorLabel.text = nil
+        errorLabel.isHidden = true
+
+        toggleProgress(from: progressView,
+                       to: loginButton)
+
     }
 
     func showProgress() {
-        toggleLoginProgress()
+        toggleProgress(from: loginButton,
+                            to: progressView)
     }
 
     func showError(error: String) {
-        toggleLoginProgress()
+        toggleProgress(from: progressView,
+                       to: loginButton)
+        errorLabel.text = error
+        errorLabel.isHidden = false
     }
 }

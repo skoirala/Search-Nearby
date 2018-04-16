@@ -1,7 +1,7 @@
 import UIKit
 
 protocol OauthLoginServiceType: class {
-
+    func startAuthorization()
     var accessTokenHandler: ((OauthCredential?, Error?) -> Void)? { get set }
     func handleOpen(url: URL) -> Bool
 }
@@ -33,6 +33,27 @@ internal class OauthLoginService {
         return true
     }
 
+    public func startAuthorization() {
+        let clientCredentials = loadClientCredentials()!
+        let authenticationUrl = createOauthAuthenticationURL(clientId: clientCredentials.clientId)
+        UIApplication.shared.open(authenticationUrl,
+                                  options: [:],
+                                  completionHandler: nil)
+    }
+
+    func createOauthAuthenticationURL(clientId: String) -> URL {
+        let oauthURLString = App.oauthServerURL
+            + "authenticate"
+            + "?"
+            + "client_id="
+            + clientId
+            + "&response_type="
+            + "code"
+            + "&redirect_uri="
+            + App.ouathRedirectURL
+        return URL(string: oauthURLString)!
+    }
+
     internal func handleAuthentication(code: String) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -50,7 +71,7 @@ internal class OauthLoginService {
     private func loadClientCredentials() -> ClientCredentials! {
         let appKeysFileName = "AppKeys.plist"
 
-        let bundle = Bundle.main
+        let bundle = Bundle(for: OauthLoginService.self)
 
         let resourceUrl = bundle.url(forResource: appKeysFileName,
                                      withExtension: nil)

@@ -15,8 +15,9 @@ class ImageDownloader {
         return cache.object(forKey: imageUrl as NSString)
     }
 
-    func getImage(for imageUrl: String, completion: @escaping (UIImage) -> Void) {
+    func getImage(for imageUrl: String, progress: Progress? = nil, completion: @escaping (UIImage) -> Void) {
 
+        print(imageUrl)
         if let image = cache.object(forKey: imageUrl as NSString) {
             completion(image)
             return
@@ -28,7 +29,7 @@ class ImageDownloader {
         guard let url = URL(string: imageUrl) else {
             return
         }
-
+        
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let strongSelf = self else {  return }
             if error != nil {
@@ -38,7 +39,7 @@ class ImageDownloader {
 
             DispatchQueue.main.async {
                 guard let data = data,
-                    let image = UIImage(data: data)?.withRenderingMode(.alwaysTemplate) else {
+                    let image = UIImage(data: data) else {
                         assert(true)
                         return
                 }
@@ -49,6 +50,11 @@ class ImageDownloader {
             }
         }
         pendingTasks[imageUrl] = task
+        
+        if let progress = progress {
+            progress.addChild(task.progress,
+                              withPendingUnitCount: 100)
+        }
         task.resume()
     }
 }

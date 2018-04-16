@@ -52,8 +52,11 @@ class RequestProviderTest: XCTestCase {
             let randomString = "Some random string"
             let data = randomString.data(using: .utf8)!
 
-            let urlResponse = URLResponse()
-            return .success(urlResponse, .content(data))
+            let urlResponse = HTTPURLResponse(url: URL(string: "http://google.com")!,
+                                              statusCode: 200,
+                                              httpVersion: "1.1",
+                                              headerFields: nil)
+            return .success(urlResponse!, .content(data))
         }
 
         stub(everything, mockingJayResponse)
@@ -121,9 +124,11 @@ class RequestProviderTest: XCTestCase {
         let mockingJayResponse = { (_: URLRequest) -> Response in
             let randomString = "Some random string"
             let data = randomString.data(using: .utf8)!
-
-            let urlResponse = URLResponse()
-            return .success(urlResponse, .content(data))
+            let urlResponse = HTTPURLResponse(url: URL(string: "http://google.com")!,
+                                                   statusCode: 200,
+                                                   httpVersion: "1.1",
+                                                   headerFields: nil)
+            return .success(urlResponse!, .content(data))
         }
 
         stub(everything, mockingJayResponse)

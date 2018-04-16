@@ -15,20 +15,52 @@ class SearchVenueViewController<T: SearchVenuePresenterType>: SearchVenueViewCon
         fatalError("init(coder:) has not been implemented")
     }
 
+    var emptyBackgroundView: UIView!
+    var searchBar: UISearchBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        presenter.attach(view: self)
-        let searchBar = UISearchBar(frame: CGRect(x: 0,
+         searchBar = UISearchBar(frame: CGRect(x: 0,
                                                   y: 0,
                                                   width: view.bounds.width,
                                                   height: 44.0))
         searchBar.delegate = self
+        
         tableView.tableHeaderView = searchBar
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
+        tableView.tableFooterView = UIView(frame: .zero)
+        
         tableView.register(VenueCell.self,
                            forCellReuseIdentifier: VenueCell.identifier)
+
+        emptyBackgroundView = UIView(frame: .zero)
+        emptyBackgroundView.backgroundColor = UIColor.groupTableViewBackground
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                          action: #selector(tapped))
+        tapGestureRecognizer.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tapGestureRecognizer)
+
+        let emptyLabel = UILabel(frame: .zero)
+        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyLabel.text = "No result"
+        emptyLabel.font = UIFont(name: "Arial", size: 20.0)
+
+        emptyBackgroundView.addSubview(emptyLabel)
+
+        NSLayoutConstraint.activate([emptyLabel.centerXAnchor.constraint(equalTo: emptyBackgroundView.centerXAnchor),
+        emptyLabel.centerYAnchor.constraint(equalTo: emptyBackgroundView.centerYAnchor)])
+
+        presenter.attach(view: self)
+    }
+
+    @objc func tapped() {
+        if searchBar.isFirstResponder {
+            searchBar.resignFirstResponder()
+        }
     }
 
     // MARK: UITableViewDataSource
@@ -48,7 +80,7 @@ class SearchVenueViewController<T: SearchVenuePresenterType>: SearchVenueViewCon
         venueCell.titleLabel?.text = displayResult.name
         venueCell.addressLabel.text = displayResult.address
         venueCell.descriptionLabel.text = displayResult.categoryName
-        venueCell.iconImageView.image = presenter.image(at: indexPath.row)
+        venueCell.iconImageView.image = presenter.image(at: indexPath.row)?.withRenderingMode(.alwaysTemplate)
         return cell
     }
 
@@ -66,6 +98,13 @@ class SearchVenueViewController<T: SearchVenuePresenterType>: SearchVenueViewCon
 extension SearchVenueViewController: SearchVenueViewType {
 
     func searchResultChanged() {
+        
+        if presenter.numberOfItems() == 0 {
+            tableView.backgroundView = emptyBackgroundView
+        } else {
+            tableView.backgroundView = nil
+        }
+
         tableView.reloadData()
     }
 
@@ -84,7 +123,7 @@ extension SearchVenueViewController: SearchVenueViewType {
             }
 
             if imageUrl == urlString {
-                cell.iconImageView.image = image
+                cell.iconImageView.image = image.withRenderingMode(.alwaysTemplate)
             }
         }
     }

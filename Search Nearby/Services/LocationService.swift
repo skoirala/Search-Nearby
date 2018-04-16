@@ -18,6 +18,7 @@ class LocationService: NSObject {
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         super.init()
+        locationManager.delegate = self
     }
 
     func lastUpdatedLocation() -> CLLocationCoordinate2D {

@@ -1,30 +1,36 @@
 import Foundation
 
-struct SearchVenueParams {
-    let searchText: String
-    let accessToken: String
-    let latitude: Double
-    let longitude: Double
+typealias LocationParams = (latitude: Double, longitude: Double)
+typealias SearchVenueParams = (searchText: String, accessToken: String, location: LocationParams)
+typealias VenuePhotosParams = (venueId: String, accessToken: String)
+
+enum FourSquareRequestTarget {
+    case searchVenues(SearchVenueParams)
+    case venuePhotos(VenuePhotosParams)
 }
 
-enum FourSquareRequestTarget: RequestTarget {
-
-    case searchVenues(SearchVenueParams)
+extension FourSquareRequestTarget: RequestTarget {
 
     var baseUrl: String {
         return "https://api.foursquare.com/v2/"
     }
 
     var params: [String: String] {
+        let defaultParams =  ["v": "20180411",
+                              "limit": "50"]
+
         switch self {
         case .searchVenues(let venueParams):
 
-            let llValue = "\(venueParams.latitude),\(venueParams.longitude)"
+            let llValue = "\(venueParams.location.latitude),\(venueParams.location.longitude)"
             let additionalParams = ["oauth_token": venueParams.accessToken,
                                     "query": venueParams.searchText,
                                     "ll": llValue]
+            return defaultParams.merging(additionalParams) { $1 }
 
-            return defaultVenueParams.merging(additionalParams) { $1 }
+        case .venuePhotos(let venuePhotoParams):
+            let additionalParams = ["oauth_token": venuePhotoParams.accessToken]
+            return defaultParams.merging(additionalParams) { $1 }
         }
     }
 
@@ -32,16 +38,12 @@ enum FourSquareRequestTarget: RequestTarget {
         switch self {
         case .searchVenues:
             return "venues/search/"
+        case .venuePhotos(let venuePhotoParams):
+            return "venues/\(venuePhotoParams.venueId)/photos/"
         }
     }
 
     var method: HttpMethod {
         return .get
-    }
-    var defaultVenueParams: [String: String] {
-        return ["ll": "60.289901,25.043335",
-                "v": "20180411",
-                "limit": "50"]
-
     }
 }

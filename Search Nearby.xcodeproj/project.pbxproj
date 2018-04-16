@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1DB74A2082128700086815 /* VenuePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7492082128700086815 /* VenuePhotosViewController.swift */; };
+		2C1DB74B2082157000086815 /* VenuePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7492082128700086815 /* VenuePhotosViewController.swift */; };
+		2C1DB74D2082951300086815 /* VenuePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB74C2082951300086815 /* VenuePhoto.swift */; };
+		2C1DB74E20829A2D00086815 /* VenuePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB74C2082951300086815 /* VenuePhoto.swift */; };
+		2C1DB7502082C8D000086815 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB74F2082C8CF00086815 /* PinterestLayout.swift */; };
+		2C1DB7512083580000086815 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB74F2082C8CF00086815 /* PinterestLayout.swift */; };
+		2C1DB7532083602F00086815 /* VenuPhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7522083602F00086815 /* VenuPhotoCollectionCell.swift */; };
+		2C1DB7552083604D00086815 /* VenuePhotoViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7542083604D00086815 /* VenuePhotoViewType.swift */; };
+		2C1DB7572083606200086815 /* VenuePhotoPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7562083606200086815 /* VenuePhotoPresenterType.swift */; };
+		2C1DB7592083608B00086815 /* VenuePhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7582083608B00086815 /* VenuePhotoPresenter.swift */; };
+		2C1DB75A2083616B00086815 /* VenuePhotoPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7562083606200086815 /* VenuePhotoPresenterType.swift */; };
+		2C1DB75B2083616E00086815 /* VenuePhotoViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7542083604D00086815 /* VenuePhotoViewType.swift */; };
+		2C1DB75C2083617300086815 /* VenuePhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7582083608B00086815 /* VenuePhotoPresenter.swift */; };
+		2C1DB75E208363D800086815 /* VenuPhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7522083602F00086815 /* VenuPhotoCollectionCell.swift */; };
+		2C1DB75F20836BCE00086815 /* AppKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C61C61B2080B98100E8C371 /* AppKeys.plist */; };
+		2C1DB7612083713300086815 /* MockedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7602083713300086815 /* MockedStorage.swift */; };
+		2C1DB7632083724A00086815 /* OauthCredentialManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7622083724A00086815 /* OauthCredentialManagerTest.swift */; };
+		2C1DB76520837D8500086815 /* SearchVenuePresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB76420837D8500086815 /* SearchVenuePresenterTest.swift */; };
+		2C1DB76720839E1900086815 /* VenuePhotoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB76620839E1900086815 /* VenuePhotoPresenterTests.swift */; };
+		2C1DB7692083AC1E00086815 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7682083AC1E00086815 /* PhotoViewerViewController.swift */; };
+		2C1DB76A2083AFFD00086815 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB7682083AC1E00086815 /* PhotoViewerViewController.swift */; };
+		2C1DB76C208479E000086815 /* DownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB76B208479E000086815 /* DownloadProgressView.swift */; };
+		2C1DB76E20847A0F00086815 /* PhotoViewerPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB76D20847A0F00086815 /* PhotoViewerPresenterType.swift */; };
+		2C1DB77020847A2500086815 /* PhotoViewerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB76F20847A2500086815 /* PhotoViewerType.swift */; };
+		2C1DB77220847AF900086815 /* UIScrollView+ZoomRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB77120847AF900086815 /* UIScrollView+ZoomRect.swift */; };
+		2C1DB77420847B1000086815 /* PhotoViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB77320847B1000086815 /* PhotoViewPresenter.swift */; };
+		2C1DB77520847B5300086815 /* PhotoViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB77320847B1000086815 /* PhotoViewPresenter.swift */; };
+		2C1DB77620847B5300086815 /* PhotoViewerPresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB76D20847A0F00086815 /* PhotoViewerPresenterType.swift */; };
+		2C1DB77720847B5300086815 /* PhotoViewerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB76F20847A2500086815 /* PhotoViewerType.swift */; };
+		2C23025020847D7F00693717 /* DownloadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB76B208479E000086815 /* DownloadProgressView.swift */; };
+		2C23025120847DB200693717 /* UIScrollView+ZoomRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DB77120847AF900086815 /* UIScrollView+ZoomRect.swift */; };
 		2C61C54A20800A9E00E8C371 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61C51A20800A9D00E8C371 /* Address.swift */; };
 		2C61C54C20800A9E00E8C371 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61C51B20800A9D00E8C371 /* Venue.swift */; };
 		2C61C54E20800A9E00E8C371 /* OauthCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C61C51C20800A9D00E8C371 /* OauthCredential.swift */; };
@@ -127,6 +158,23 @@
 		18BAA9DB3E44CF8EA94D684A /* Pods_Search_Nearby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Search_Nearby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DDA1845E91BD9A1DCF551C /* Pods_Search_NearbyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Search_NearbyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A27E731FDDBEFD206569CB0 /* Pods-Search NearbyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Search NearbyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Search NearbyTests/Pods-Search NearbyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C1DB7492082128700086815 /* VenuePhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuePhotosViewController.swift; sourceTree = "<group>"; };
+		2C1DB74C2082951300086815 /* VenuePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuePhoto.swift; sourceTree = "<group>"; };
+		2C1DB74F2082C8CF00086815 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		2C1DB7522083602F00086815 /* VenuPhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuPhotoCollectionCell.swift; sourceTree = "<group>"; };
+		2C1DB7542083604D00086815 /* VenuePhotoViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuePhotoViewType.swift; sourceTree = "<group>"; };
+		2C1DB7562083606200086815 /* VenuePhotoPresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuePhotoPresenterType.swift; sourceTree = "<group>"; };
+		2C1DB7582083608B00086815 /* VenuePhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuePhotoPresenter.swift; sourceTree = "<group>"; };
+		2C1DB7602083713300086815 /* MockedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedStorage.swift; sourceTree = "<group>"; };
+		2C1DB7622083724A00086815 /* OauthCredentialManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthCredentialManagerTest.swift; sourceTree = "<group>"; };
+		2C1DB76420837D8500086815 /* SearchVenuePresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVenuePresenterTest.swift; sourceTree = "<group>"; };
+		2C1DB76620839E1900086815 /* VenuePhotoPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuePhotoPresenterTests.swift; sourceTree = "<group>"; };
+		2C1DB7682083AC1E00086815 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		2C1DB76B208479E000086815 /* DownloadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProgressView.swift; sourceTree = "<group>"; };
+		2C1DB76D20847A0F00086815 /* PhotoViewerPresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerPresenterType.swift; sourceTree = "<group>"; };
+		2C1DB76F20847A2500086815 /* PhotoViewerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerType.swift; sourceTree = "<group>"; };
+		2C1DB77120847AF900086815 /* UIScrollView+ZoomRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZoomRect.swift"; sourceTree = "<group>"; };
+		2C1DB77320847B1000086815 /* PhotoViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewPresenter.swift; sourceTree = "<group>"; };
 		2C2398A9207E08FA0048BA08 /* Search Nearby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search Nearby.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C61C51A20800A9D00E8C371 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		2C61C51B20800A9D00E8C371 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -229,7 +277,6 @@
 		2C2398A0207E08FA0048BA08 = {
 			isa = PBXGroup;
 			children = (
-				2C61C5C420802B4B00E8C371 /* Search NearbyTests */,
 				2C2398AB207E08FA0048BA08 /* Search Nearby */,
 				2C61C5D620802BD600E8C371 /* Search NearbyTests */,
 				2C2398AA207E08FA0048BA08 /* Products */,
@@ -277,6 +324,7 @@
 				2C61C52020800A9D00E8C371 /* VenueDetail.swift */,
 				2C61C52120800A9D00E8C371 /* VenueResponse.swift */,
 				2C61C59E2080146F00E8C371 /* MapViewDetailData.swift */,
+				2C1DB74C2082951300086815 /* VenuePhoto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,9 +332,12 @@
 		2C61C52220800A9D00E8C371 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2C1DB74F2082C8CF00086815 /* PinterestLayout.swift */,
 				2C61C52320800A9D00E8C371 /* ProgressView.swift */,
 				2C61C52420800A9D00E8C371 /* CustomButton.swift */,
 				2C61C52520800A9D00E8C371 /* VenueCell.swift */,
+				2C1DB7522083602F00086815 /* VenuPhotoCollectionCell.swift */,
+				2C1DB76B208479E000086815 /* DownloadProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,6 +360,8 @@
 				2C61C52E20800A9D00E8C371 /* SearchVenuePresenter.swift */,
 				2C61C5A12080148400E8C371 /* MapViewPresenter.swift */,
 				2C61C5AD2080287C00E8C371 /* VenuDetailPresenter.swift */,
+				2C1DB7582083608B00086815 /* VenuePhotoPresenter.swift */,
+				2C1DB77320847B1000086815 /* PhotoViewPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -347,6 +400,8 @@
 				2C61C53C20800A9D00E8C371 /* MapViewController.swift */,
 				2C61C53D20800A9D00E8C371 /* VenueDetailViewController.swift */,
 				2C61C53E20800A9D00E8C371 /* LoginViewController.swift */,
+				2C1DB7492082128700086815 /* VenuePhotosViewController.swift */,
+				2C1DB7682083AC1E00086815 /* PhotoViewerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -364,6 +419,10 @@
 				2C61C59B2080145B00E8C371 /* MapViewType.swift */,
 				2C61C5A4208027C500E8C371 /* VenuDetailViewType.swift */,
 				2C61C5A7208027D700E8C371 /* VenuDetailPresenterType.swift */,
+				2C1DB7542083604D00086815 /* VenuePhotoViewType.swift */,
+				2C1DB7562083606200086815 /* VenuePhotoPresenterType.swift */,
+				2C1DB76D20847A0F00086815 /* PhotoViewerPresenterType.swift */,
+				2C1DB76F20847A2500086815 /* PhotoViewerType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -373,15 +432,9 @@
 			children = (
 				2C61C54720800A9D00E8C371 /* UIFont+AppFonts.swift */,
 				2C61C54920800A9D00E8C371 /* UIColor+AppColors.swift */,
+				2C1DB77120847AF900086815 /* UIScrollView+ZoomRect.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		2C61C5C420802B4B00E8C371 /* Search NearbyTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Search NearbyTests";
 			sourceTree = "<group>";
 		};
 		2C61C5D620802BD600E8C371 /* Search NearbyTests */ = {
@@ -393,6 +446,10 @@
 				2C61C5C820802B4B00E8C371 /* RequestTargetMock.swift */,
 				2C61C5C920802B4B00E8C371 /* RequestProviderTest.swift */,
 				2C61C5D920802BD600E8C371 /* Info.plist */,
+				2C1DB7602083713300086815 /* MockedStorage.swift */,
+				2C1DB7622083724A00086815 /* OauthCredentialManagerTest.swift */,
+				2C1DB76420837D8500086815 /* SearchVenuePresenterTest.swift */,
+				2C1DB76620839E1900086815 /* VenuePhotoPresenterTests.swift */,
 			);
 			path = "Search NearbyTests";
 			sourceTree = "<group>";
@@ -506,6 +563,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1DB75F20836BCE00086815 /* AppKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1DB77220847AF900086815 /* UIScrollView+ZoomRect.swift in Sources */,
 				2C61C6172080AAF400E8C371 /* LocationService.swift in Sources */,
 				2C61C58420800A9E00E8C371 /* LoginViewController.swift in Sources */,
 				2C61C59020800A9E00E8C371 /* LoginViewPresenterType.swift in Sources */,
@@ -641,12 +700,17 @@
 				2C61C59220800A9E00E8C371 /* UIFont+AppFonts.swift in Sources */,
 				2C61C55820800A9E00E8C371 /* VenueResponse.swift in Sources */,
 				2C61C59620800A9E00E8C371 /* UIColor+AppColors.swift in Sources */,
+				2C1DB7692083AC1E00086815 /* PhotoViewerViewController.swift in Sources */,
 				2C61C57E20800A9E00E8C371 /* SearchVenueViewController.swift in Sources */,
 				2C61C56A20800A9E00E8C371 /* SearchVenuePresenter.swift in Sources */,
 				2C61C59F2080146F00E8C371 /* MapViewDetailData.swift in Sources */,
+				2C1DB7502082C8D000086815 /* PinterestLayout.swift in Sources */,
 				2C61C57820800A9E00E8C371 /* AppKeyValueStorage.swift in Sources */,
+				2C1DB76C208479E000086815 /* DownloadProgressView.swift in Sources */,
 				2C61C5A22080148400E8C371 /* MapViewPresenter.swift in Sources */,
+				2C1DB74D2082951300086815 /* VenuePhoto.swift in Sources */,
 				2C61C54E20800A9E00E8C371 /* OauthCredential.swift in Sources */,
+				2C1DB76E20847A0F00086815 /* PhotoViewerPresenterType.swift in Sources */,
 				2C61C57220800A9E00E8C371 /* HttpMethod.swift in Sources */,
 				2C61C54A20800A9E00E8C371 /* Address.swift in Sources */,
 				2C61C5992080144C00E8C371 /* MapViewPresenterType.swift in Sources */,
@@ -654,13 +718,18 @@
 				2C61C6152080A38F00E8C371 /* Router.swift in Sources */,
 				2C61C58E20800A9E00E8C371 /* SearchVenueViewType.swift in Sources */,
 				2C61C55020800A9E00E8C371 /* VenueAnnotation.swift in Sources */,
+				2C1DB7572083606200086815 /* VenuePhotoPresenterType.swift in Sources */,
 				2C61C55C20800A9E00E8C371 /* CustomButton.swift in Sources */,
 				2C61C61220809D2F00E8C371 /* AppConstants.swift in Sources */,
 				2C61C55620800A9E00E8C371 /* VenueDetail.swift in Sources */,
 				2C61C59420800A9E00E8C371 /* RequestTarget+RequestMethods.swift in Sources */,
+				2C1DB77020847A2500086815 /* PhotoViewerType.swift in Sources */,
 				2C61C55220800A9E00E8C371 /* VenueDisplayResult.swift in Sources */,
 				2C61C58220800A9E00E8C371 /* VenueDetailViewController.swift in Sources */,
 				2C61C55E20800A9E00E8C371 /* VenueCell.swift in Sources */,
+				2C1DB7552083604D00086815 /* VenuePhotoViewType.swift in Sources */,
+				2C1DB77420847B1000086815 /* PhotoViewPresenter.swift in Sources */,
+				2C1DB7532083602F00086815 /* VenuPhotoCollectionCell.swift in Sources */,
 				2C61C57A20800A9E00E8C371 /* OauthCredentialManager.swift in Sources */,
 				2C61C5AE2080287C00E8C371 /* VenuDetailPresenter.swift in Sources */,
 				2C61C5A8208027D700E8C371 /* VenuDetailPresenterType.swift in Sources */,
@@ -675,6 +744,8 @@
 				2C61C57C20800A9E00E8C371 /* AppLoginHandler.swift in Sources */,
 				2C61C58C20800A9E00E8C371 /* SearchVenuePresenterType.swift in Sources */,
 				2C61C55A20800A9E00E8C371 /* ProgressView.swift in Sources */,
+				2C1DB74A2082128700086815 /* VenuePhotosViewController.swift in Sources */,
+				2C1DB7592083608B00086815 /* VenuePhotoPresenter.swift in Sources */,
 				2C61C57620800A9E00E8C371 /* RequestProvider.swift in Sources */,
 				2C61C56E20800A9E00E8C371 /* RequestTarget.swift in Sources */,
 				2C61C57420800A9E00E8C371 /* FourSquareOauthTarget.swift in Sources */,
@@ -704,19 +775,27 @@
 				2C61C5FF20802CD500E8C371 /* LoginViewPresenterType.swift in Sources */,
 				2C61C5F020802CC300E8C371 /* FourSquareRequestTarget.swift in Sources */,
 				2C61C5E420802C7C00E8C371 /* RequestTargetMock.swift in Sources */,
+				2C1DB77620847B5300086815 /* PhotoViewerPresenterType.swift in Sources */,
+				2C1DB77520847B5300086815 /* PhotoViewPresenter.swift in Sources */,
+				2C1DB75E208363D800086815 /* VenuPhotoCollectionCell.swift in Sources */,
+				2C1DB76A2083AFFD00086815 /* PhotoViewerViewController.swift in Sources */,
 				2C61C60420802CDE00E8C371 /* AppKeyValueStorage.swift in Sources */,
 				2C61C5EA20802CBA00E8C371 /* VenueDisplayResult.swift in Sources */,
 				2C61C5E220802C7C00E8C371 /* RequestTargetTest.swift in Sources */,
 				2C61C5F320802CC300E8C371 /* HttpMethod.swift in Sources */,
 				2C61C5E720802CBA00E8C371 /* Venue.swift in Sources */,
+				2C1DB75B2083616E00086815 /* VenuePhotoViewType.swift in Sources */,
+				2C1DB77720847B5300086815 /* PhotoViewerType.swift in Sources */,
 				2C61C5FE20802CD500E8C371 /* SearchVenueViewType.swift in Sources */,
 				2C61C60E20802D2700E8C371 /* ProgressView.swift in Sources */,
 				2C61C5F620802CCC00E8C371 /* LoginViewPresenter.swift in Sources */,
 				2C61C5E820802CBA00E8C371 /* OauthCredential.swift in Sources */,
+				2C1DB75A2083616B00086815 /* VenuePhotoPresenterType.swift in Sources */,
 				2C61C5E520802C7C00E8C371 /* RequestProviderTest.swift in Sources */,
 				2C61C60620802CDE00E8C371 /* AppLoginHandler.swift in Sources */,
 				2C61C60520802CDE00E8C371 /* OauthCredentialManager.swift in Sources */,
 				2C61C5E120802C7C00E8C371 /* LoginViewPresenterTest.swift in Sources */,
+				2C23025020847D7F00693717 /* DownloadProgressView.swift in Sources */,
 				2C61C5E320802C7C00E8C371 /* LoginHandlerTest.swift in Sources */,
 				2C61C60720802CDE00E8C371 /* MapSnapShotLoader.swift in Sources */,
 				2C61C60320802CD500E8C371 /* VenuDetailPresenterType.swift in Sources */,
@@ -724,19 +803,28 @@
 				2C61C61320809D8C00E8C371 /* AppConstants.swift in Sources */,
 				2C61C60C20802D1D00E8C371 /* UIFont+AppFonts.swift in Sources */,
 				2C61C5F820802CCC00E8C371 /* MapViewPresenter.swift in Sources */,
+				2C1DB75C2083617300086815 /* VenuePhotoPresenter.swift in Sources */,
+				2C1DB7632083724A00086815 /* OauthCredentialManagerTest.swift in Sources */,
 				2C61C60920802D0700E8C371 /* MapViewController.swift in Sources */,
 				2C61C5EC20802CBA00E8C371 /* VenueDetail.swift in Sources */,
 				2C61C60B20802D0700E8C371 /* LoginViewController.swift in Sources */,
 				2C61C5F720802CCC00E8C371 /* SearchVenuePresenter.swift in Sources */,
 				2C61C60820802D0700E8C371 /* SearchVenueViewController.swift in Sources */,
 				2C61C60120802CD500E8C371 /* MapViewType.swift in Sources */,
+				2C23025120847DB200693717 /* UIScrollView+ZoomRect.swift in Sources */,
+				2C1DB7512083580000086815 /* PinterestLayout.swift in Sources */,
+				2C1DB7612083713300086815 /* MockedStorage.swift in Sources */,
 				2C61C5F220802CC300E8C371 /* ImageDownloader.swift in Sources */,
 				2C61C5EB20802CBA00E8C371 /* Category.swift in Sources */,
 				2C61C60D20802D1D00E8C371 /* UIColor+AppColors.swift in Sources */,
+				2C1DB74E20829A2D00086815 /* VenuePhoto.swift in Sources */,
 				2C61C60F20802D2700E8C371 /* CustomButton.swift in Sources */,
+				2C1DB76520837D8500086815 /* SearchVenuePresenterTest.swift in Sources */,
 				2C61C60A20802D0700E8C371 /* VenueDetailViewController.swift in Sources */,
 				2C61C61020802D2700E8C371 /* VenueCell.swift in Sources */,
+				2C1DB76720839E1900086815 /* VenuePhotoPresenterTests.swift in Sources */,
 				2C61C5F420802CC300E8C371 /* FourSquareOauthTarget.swift in Sources */,
+				2C1DB74B2082157000086815 /* VenuePhotosViewController.swift in Sources */,
 				2C61C6192080B43A00E8C371 /* LocationService.swift in Sources */,
 				2C61C5FC20802CD500E8C371 /* Storage.swift in Sources */,
 			);
@@ -885,7 +973,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5H846XCLJ5;
 				INFOPLIST_FILE = "$(SRCROOT)/Search Nearby/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -907,7 +995,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5H846XCLJ5;
 				INFOPLIST_FILE = "$(SRCROOT)/Search Nearby/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

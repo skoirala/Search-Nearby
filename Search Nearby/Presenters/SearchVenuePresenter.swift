@@ -52,7 +52,7 @@ extension SearchVenuePresenter: SearchVenuePresenterType {
 
     func itemSelected(at index: Int) {
         let venue = venues[index]
-        router.showMapView(venue: venue)
+        router.showVenuePhotos(venue: venue)
     }
 
     func item(at index: Int) -> VenueDisplayResult {
@@ -61,6 +61,7 @@ extension SearchVenuePresenter: SearchVenuePresenterType {
 
     func attach(view: SearchVenueViewType) {
         self.view = view
+        view.searchResultChanged()
         locationService.updateLocation()
     }
 
@@ -77,11 +78,11 @@ extension SearchVenuePresenter: SearchVenuePresenterType {
 
         let credentials: OauthCredential = try! storage.credential()
         let location = locationService.lastUpdatedLocation()
-        
-        let targetParams = SearchVenueParams(searchText: searchText,
-                                             accessToken: credentials.accessToken,
-                                             latitude: location.latitude,
-                                             longitude: location.longitude)
+
+        let targetParams = (searchText: searchText,
+                            accessToken: credentials.accessToken,
+                            (latitude: location.latitude,
+                             longitude: location.longitude))
 
         pendingTask = requestProvider.response(target: .searchVenues(targetParams)) { [weak self] (result: VenueResponse?, error: Error?) in
 

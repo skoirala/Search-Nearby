@@ -12,7 +12,7 @@ class LoginViewTypeMock: LoginViewType {
         showProgressCalled = true
     }
 
-    func handleLoginSuccess(with token: OauthCredential) {
+    func handleLoginSuccess() {
         handleLoginSuccessCalled = true
     }
 
@@ -35,15 +35,19 @@ class LoginViewPresenterTest: XCTestCase {
     var loginViewMock: LoginViewTypeMock!
     var authenticationManager: UserCredentialManagerMock!
     var loginPresenter: LoginViewPresenter!
+    var storage: Storage!
 
     override func setUp() {
+        storage = MockedStorage()
         loginViewMock = LoginViewTypeMock()
         authenticationManager = UserCredentialManagerMock()
 
         let window = UIWindow()
-        let storage = AppKeyValueStorage()
         let router = Router(window: window,
                             storage: storage)
+        router.start()
+        let credential = OauthCredential(accessToken: "")
+        try! storage.store(credential: credential)
 
         loginPresenter = LoginViewPresenter(router: router,
                                             storage: storage,
@@ -52,6 +56,7 @@ class LoginViewPresenterTest: XCTestCase {
     }
 
     override func tearDown() {
+        UserDefaults.resetStandardUserDefaults()
         loginViewMock = nil
         authenticationManager = nil
         loginPresenter = nil
@@ -65,13 +70,13 @@ class LoginViewPresenterTest: XCTestCase {
     }
 
     func testViewRespondsToSuccess() {
+
         loginPresenter.startAuthorization()
         
         authenticationManager.observe?(OauthCredential(accessToken: ""),
                                        nil)
         XCTAssertTrue(loginViewMock.handleLoginSuccessCalled, "handle login success not called")
         XCTAssertFalse(loginViewMock.showErrorCalled, "show error called")
-
     }
 
     func testViewRespondsToFailure() {
