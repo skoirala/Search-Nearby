@@ -10,6 +10,7 @@ class VenuePhotoCollectionCell: UICollectionViewCell {
     override init(frame: CGRect) {
         imageView = UIImageView(frame: .zero)
         activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        contentView.clipsToBounds = true
 
         super.init(frame: frame)
 
@@ -23,6 +24,7 @@ class VenuePhotoCollectionCell: UICollectionViewCell {
 
     func createViews() {
         backgroundColor = .black
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imageView)
 
