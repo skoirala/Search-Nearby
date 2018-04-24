@@ -10,10 +10,9 @@ class VenuePhotoCollectionCell: UICollectionViewCell {
     override init(frame: CGRect) {
         imageView = UIImageView(frame: .zero)
         activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
-        contentView.clipsToBounds = true
 
         super.init(frame: frame)
-
+        contentView.clipsToBounds = true
         createViews()
         setupConstraints()
     }
